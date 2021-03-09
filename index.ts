@@ -122,6 +122,7 @@ app.post('/deposit',
             balance: reqUser?.balance 
         })
       }
+      res.status(404).json({message:"USER NOT FOUND"})
     }catch(e){
       res.status(401).json({
         message : "Invalid token"
@@ -147,6 +148,7 @@ app.post('/withdraw',
             balance: reqUser.balance 
         })
       }
+      res.status(404).json({message:"USER NOT FOUND"})
     }catch(e){
       res.status(401).json({
         message : "Invalid token"
